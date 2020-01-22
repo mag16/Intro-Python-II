@@ -2,6 +2,8 @@ from room import Room
 
 # Declare all the rooms
 
+# Dictonary of rooms, key:values = name: description
+
 room = {
     'outside':  Room("Outside Cave Entrance",
                      "North of you, the cave mount beckons"),
@@ -25,6 +27,7 @@ earlier adventurers. The only exit is to the south."""),
 # Link rooms together
 
 room['outside'].n_to = room['foyer']
+# room['outside'].s_to = none
 room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']
 room['foyer'].e_to = room['narrow']
@@ -38,14 +41,26 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+my_player = Player(Player("attributes", Room("courtyard", room["courtyard"]) ))
 
 # Write a loop that:
 #
 # * Prints the current room name
+print(my_player.room.name)
 # * Prints the current description (the textwrap module might be useful here).
+print(my_player.room.description)
 # * Waits for user input and decides what to do.
+direction = input("prompt").lower()
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
 # Print an error message if the movement isn't allowed.
+#checkout switch statements 
+if dir == "n"
+    # move north
+    # 1. is there a north? (.n_to NOT None)
+        # print appropriate error message
+    # 2. There isnt a north :(
+        #print 
+elif...
 #
 # If the user enters "q", quit the game.
